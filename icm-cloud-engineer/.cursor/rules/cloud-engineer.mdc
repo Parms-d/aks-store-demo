@@ -1,0 +1,30 @@
+---
+description: ICM context routing layered over GitHub Spec Kit for cloud engineering work
+alwaysApply: true
+---
+
+# Cloud Engineer — ICM + Spec Kit
+
+## Read order
+
+1. `AGENTS.md` — Layer 0, where you are and which lane
+2. `CONTEXT.md` — Layer 1, lane router
+3. Lane A: the Spec Kit command prompt. Lane B: `ops/<stage>/CONTEXT.md`
+4. Layer 3 — only files named in the step's context table
+5. Layer 4 — `specs/<feature>/` or `ops/<stage>/output/`
+
+## Lanes
+
+- **Lane A (Spec Kit)** — design work. `/speckit.specify` → `plan` → `tasks` → `implement` → `converge`. Artifacts in `specs/`.
+- **Lane B (ICM ops)** — fixed procedures with no design decisions. Stage contract in `ops/`. No spec, no branch.
+
+Default to Lane A when unsure. Promote a Lane B stage to Lane A the moment it needs a decision.
+
+## Rules
+
+- Load only what the active step's context table lists. Never scan the repo.
+- Abbreviations: linked project IaC first, then `context/abbreviations.json`. Never invent one.
+- `memory/constitution.md` is the gate at `/speckit.plan`. Violations need a recorded exception.
+- One canonical source: reference `context/` files, do not restate their rules.
+- Stop at checkpoints. A human-edited artifact overrides what you wrote.
+- Edit `memory/` and `speckit/overrides/`, never the synced copies under `.specify/`. Re-run `scripts/bootstrap-speckit.sh` after editing.
