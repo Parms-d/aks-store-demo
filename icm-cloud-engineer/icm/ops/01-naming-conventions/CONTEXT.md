@@ -43,7 +43,7 @@ Do not load `../../specs/`, `../../examples/`, or the constitution. This stage m
 | Source stated | Output names which abbreviation source was used |
 | Abbreviation accuracy | Every prefix matches the JSON, or is a documented IaC exception citing file and variable |
 | Constraint compliance | Every example passes length, charset, and uniqueness for its type |
-| No duplication | Doc references `context/naming-standards.md`; does not restate the constraint table |
+| No duplication | Doc references `icm/context/naming-standards.md`; does not restate the constraint table |
 | Override coverage | Each resource lists its IaC override parameter, or explicitly "none" |
 | Illustrative tokens marked | Example tokens are labelled as illustrative, not presented as real |
 | Tool divergence | If both Bicep and Terraform exist, both documented and the difference flagged |

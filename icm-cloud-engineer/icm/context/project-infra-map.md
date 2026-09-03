@@ -20,7 +20,7 @@ Relative to the linked project root.
 
 Resolve a file as `{{PROJECT_PATH}}/<relative path>`. Example: `../aks-store-demo/infra/bicep/main.bicep`.
 
-If a path is empty or the file is missing, fall back to `context/abbreviations.json` and say so in your output.
+If a path is empty or the file is missing, fall back to `icm/context/abbreviations.json` and say so in your output.
 
 ## What to Extract
 

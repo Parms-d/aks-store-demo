@@ -6,7 +6,7 @@ Governing principles for all infrastructure work in this workspace. `/speckit.pl
 
 ### I. Canonical Naming (NON-NEGOTIABLE)
 
-Every Azure resource name traces to a documented source. Abbreviations resolve from the linked project's IaC first, then `context/abbreviations.json`, then Microsoft CAF. Inventing an abbreviation is a defect. Names that violate the length, charset, or uniqueness constraints in `context/naming-standards.md` do not ship.
+Every Azure resource name traces to a documented source. Abbreviations resolve from the linked project's IaC first, then `icm/context/abbreviations.json`, then Microsoft CAF. Inventing an abbreviation is a defect. Names that violate the length, charset, or uniqueness constraints in `icm/context/naming-standards.md` do not ship.
 
 ### II. Infrastructure as Code Only
 
@@ -18,7 +18,7 @@ Each phase produces a plain-text artifact a human can read and edit before the n
 
 ### IV. One Canonical Source
 
-Every fact has exactly one home. Reference material lives in `context/`; specs and plans link to it. The moment a naming rule exists in two files they begin to drift, and the drift is discovered during an incident rather than a review.
+Every fact has exactly one home. Reference material lives in `icm/context/`; specs and plans link to it. The moment a naming rule exists in two files they begin to drift, and the drift is discovered during an incident rather than a review.
 
 ### V. Reversible and Observable
 
@@ -26,8 +26,8 @@ Changes are diffable, reversible, and inspectable without special tooling. Prefe
 
 ## Additional Constraints
 
-- **Tagging** — every resource carries the required tags in `context/naming-standards.md`.
-- **Secrets** — never written to `specs/`, `ops/*/output/`, or `context/`. Reference the secret store by name only.
+- **Tagging** — every resource carries the required tags in `icm/context/naming-standards.md`.
+- **Secrets** — never written to `specs/`, `icm/ops/*/output/`, or `icm/context/`. Reference the secret store by name only.
 - **Environment parity** — a change applied to production must exist in a lower environment first, unless the plan records why not.
 - **Tool divergence** — when Bicep and Terraform coexist, document naming for each; never imply one covers both.
 

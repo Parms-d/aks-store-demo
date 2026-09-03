@@ -8,7 +8,7 @@ For infrastructure work that involves design decisions. Produces artifacts in `s
 
 | Step | Command | Produces |
 |------|---------|----------|
-| 0 | `/speckit.constitution` | `memory/constitution.md` (once per project) |
+| 0 | `/speckit.constitution` | `icm/memory/constitution.md` (once per project) |
 | 1 | `/speckit.specify` | `spec.md` — what and why |
 | 2 | `/speckit.clarify` | resolved ambiguities in `spec.md` |
 | 3 | `/speckit.plan` | `plan.md`, `research.md`, `data-model.md`, `contracts/` |
@@ -26,10 +26,10 @@ This is the ICM contribution to Lane A. Load only these.
 
 | Step | Load | Do NOT load |
 |------|------|-------------|
-| `specify` | `context/cloud-profile.md` | `context/abbreviations.json`, `skills/`, `ops/` |
-| `plan` | `memory/constitution.md`, `context/naming-standards.md`, `context/project-infra-map.md` | `ops/`, `examples/` |
-| `tasks` | `specs/<feature>/plan.md`, `context/project-infra-map.md` | `context/abbreviations.json` |
-| `implement` | `specs/<feature>/tasks.md`, `context/naming-standards.md`, `skills/azure-naming-lookup/SKILL.md` | `examples/`, other features in `specs/` |
+| `specify` | `icm/context/cloud-profile.md` | `icm/context/abbreviations.json`, `icm/skills/`, `icm/ops/` |
+| `plan` | `icm/memory/constitution.md`, `icm/context/naming-standards.md`, `icm/context/project-infra-map.md` | `icm/ops/`, `docs/examples/` |
+| `tasks` | `specs/<feature>/plan.md`, `icm/context/project-infra-map.md` | `icm/context/abbreviations.json` |
+| `implement` | `specs/<feature>/tasks.md`, `icm/context/naming-standards.md`, `icm/skills/azure-naming-lookup/SKILL.md` | `docs/examples/`, other features in `specs/` |
 | `analyze`, `converge` | `specs/<feature>/*` | everything outside the feature folder |
 
 ## Lane B — Operational Stages (ICM)
@@ -38,7 +38,7 @@ For recurring tasks with a fixed procedure and no design decisions. No spec, no 
 
 | Task | Go to |
 |------|-------|
-| Generate Azure naming conventions | `ops/01-naming-conventions/CONTEXT.md` |
+| Generate Azure naming conventions | `icm/ops/01-naming-conventions/CONTEXT.md` |
 
 Lane B stages follow the ICM stage contract: Inputs, Process, Checkpoints, Audit, Outputs.
 
@@ -50,7 +50,7 @@ A Lane B stage that starts requiring design decisions is no longer Lane B. Promo
 
 | Resource | Location | Contains |
 |----------|----------|----------|
-| Constitution | `memory/constitution.md` | Principles enforced at the plan gate |
-| Reference router | `context/CONTEXT.md` | Routes to profile, standards, abbreviations |
-| Naming skill | `skills/azure-naming-lookup/SKILL.md` | Abbreviation lookup and name validation |
-| Template overrides | `speckit/overrides/` | Cloud-flavored spec/plan/tasks templates |
+| Constitution | `icm/memory/constitution.md` | Principles enforced at the plan gate |
+| Reference router | `icm/context/CONTEXT.md` | Routes to profile, standards, abbreviations |
+| Naming skill | `icm/skills/azure-naming-lookup/SKILL.md` | Abbreviation lookup and name validation |
+| Template overrides | `icm/speckit/overrides/` | Cloud-flavored spec/plan/tasks templates |

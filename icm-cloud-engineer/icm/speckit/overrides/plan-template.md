@@ -13,13 +13,13 @@
 
 | File | Section | Why |
 |------|---------|-----|
-| `memory/constitution.md` | Core Principles | Gate below |
-| `context/naming-standards.md` | Patterns, Constraints | Resource naming |
-| `context/project-infra-map.md` | Paths | Where to edit |
+| `icm/memory/constitution.md` | Core Principles | Gate below |
+| `icm/context/naming-standards.md` | Patterns, Constraints | Resource naming |
+| `icm/context/project-infra-map.md` | Paths | Where to edit |
 
 ## Technical Context
 
-**IaC tool**: [Bicep / Terraform / both — from `context/cloud-profile.md`]
+**IaC tool**: [Bicep / Terraform / both — from `icm/context/cloud-profile.md`]
 **Deployment tool**: [azd / CLI / pipeline]
 **Target scope**: [subscription / resource group / cluster]
 **Regions**: [primary, failover]
@@ -39,14 +39,14 @@ Anything unknown stays `NEEDS CLARIFICATION` — do not guess.
 | I. Canonical Naming | PASS / FAIL | Every new name traced to `abbreviations.json` or documented exception |
 | II. Infrastructure as Code Only | PASS / FAIL | No manual steps in the rollout |
 | III. Human Review Between Phases | PASS / FAIL | Checkpoints identified |
-| IV. One Canonical Source | PASS / FAIL | No rule duplicated from `context/` |
+| IV. One Canonical Source | PASS / FAIL | No rule duplicated from `icm/context/` |
 | V. Reversible and Observable | PASS / FAIL | Rollback path stated above |
 
 **Exceptions**: [None, or principle + justification + expiry.]
 
 ## Resource Naming
 
-Names introduced or changed by this feature. Validate each against `context/naming-standards.md`.
+Names introduced or changed by this feature. Validate each against `icm/context/naming-standards.md`.
 
 | Resource | Abbreviation key | Pattern | Example | Override param | Constraint check |
 |----------|------------------|---------|---------|----------------|------------------|
@@ -68,7 +68,7 @@ specs/[###-feature]/
 
 ### Files to change (linked project)
 
-Paths resolve against `{{PROJECT_PATH}}` from `context/project-infra-map.md`.
+Paths resolve against `{{PROJECT_PATH}}` from `icm/context/project-infra-map.md`.
 
 ```text
 [e.g. infra/bicep/main.bicep, infra/bicep/app/<new-module>.bicep, infra/bicep/main.parameters.json]

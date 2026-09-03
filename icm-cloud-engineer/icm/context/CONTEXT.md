@@ -16,14 +16,14 @@
 When resolving an abbreviation or naming rule, check in this order and stop at the first hit:
 
 1. **Linked project IaC** — paths declared in `project-infra-map.md`
-2. **Bundled fallback** — `context/abbreviations.json`
+2. **Bundled fallback** — `icm/context/abbreviations.json`
 3. **Microsoft CAF** — [resource abbreviations](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations)
 
 The linked project always wins. It is what actually deploys.
 
 ## One-Way Reference Rule
 
-Files in `context/` do not reference `specs/` or `ops/`. Work artifacts reference reference material, never the reverse. This keeps the dependency graph acyclic as stages are added.
+Files in `icm/context/` do not reference `specs/` or `icm/ops/`. Work artifacts reference reference material, never the reverse. This keeps the dependency graph acyclic as stages are added.
 
 ## Do Not
 

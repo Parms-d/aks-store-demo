@@ -24,9 +24,9 @@ Spec Kit tells the agent *what phase it is in*. ICM tells it *what to read while
   → /speckit.tasks → /speckit.analyze → /speckit.implement → /speckit.converge
 ```
 
-Artifacts land in `specs/<NNN-slug>/`. The Constitution Check gate in `plan.md` enforces `memory/constitution.md`.
+Artifacts land in `specs/<NNN-slug>/`. The Constitution Check gate in `plan.md` enforces `icm/memory/constitution.md`.
 
-**Lane B — Operational stages.** Recurring procedures with a fixed method and no design decisions. Stage contracts in `ops/`. No spec, no branch, no pipeline.
+**Lane B — Operational stages.** Recurring procedures with a fixed method and no design decisions. Stage contracts in `icm/ops/`. No spec, no branch, no pipeline.
 
 A Lane B stage that starts needing a decision gets promoted to Lane A. That rule is what keeps the two from blurring.
 
@@ -35,16 +35,25 @@ A Lane B stage that starts needing a decision gets promoted to Lane A. That rule
 ```
 AGENTS.md / CLAUDE.md     Layer 0 — identity and lane selection
 CONTEXT.md                Layer 1 — lane router with per-step context tables
-context/                  Layer 3 — cloud profile, naming standards, abbreviations
-memory/constitution.md    Layer 3 — principles, synced into Spec Kit
-speckit/overrides/        Cloud-flavored spec / plan / tasks templates
-ops/                      Layer 2 — Lane B stage contracts
-skills/                   Layer 3 — loaded on demand only
-specs/                    Layer 4 — Spec Kit feature artifacts
-scripts/bootstrap-speckit.sh
+
+icm/                      ← ICM owns
+├── context/              Layer 3 — cloud profile, naming standards, abbreviations
+├── memory/               constitution, synced into Spec Kit
+├── speckit/overrides/    cloud-flavored spec / plan / tasks templates
+├── ops/                  Layer 2 — Lane B stage contracts
+├── skills/               Layer 3 — loaded on demand only
+└── setup/                onboarding questionnaire
+
+specs/                    ← Spec Kit owns — Layer 4 feature artifacts
+.specify/                 ← Spec Kit owns — generated, gitignored
+
+scripts/                  bootstrap-speckit.sh
+docs/                     human-facing; never loaded by the agent
 ```
 
-`memory/` and `speckit/overrides/` are the authored sources. The bootstrap script copies them into `.specify/`, which is gitignored because Spec Kit owns it. Edit the sources and re-run the script — never edit the copies.
+Each system owns a clearly labelled folder, so it is always obvious who is responsible for a file and what is safe to edit.
+
+`icm/memory/` and `icm/speckit/overrides/` are the authored sources. The bootstrap script copies them into `.specify/`, which is gitignored because Spec Kit owns it. Edit the sources and re-run the script — never edit the copies.
 
 ## Setup
 
@@ -54,14 +63,14 @@ uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@vX
 
 Then, with your agent in this directory:
 
-1. Say **`setup`** — answers fill the `{{PLACEHOLDER}}` values in `context/`
+1. Say **`setup`** — answers fill the `{{PLACEHOLDER}}` values in `icm/context/`
 2. Run `scripts/bootstrap-speckit.sh cursor` (or `copilot`, `claude`, …)
 3. Lane A: `/speckit.specify Add private endpoints to the data tier`
    Lane B: "generate naming conventions for dev"
 
 ## Handing this to another AI
 
-`HANDOFF.md` is a self-contained prompt describing the whole structure and its rules. Paste it into any agent to have it pick up where this left off.
+`docs/HANDOFF.md` is a self-contained prompt describing the whole structure and its rules. Paste it into any agent to have it pick up where this left off.
 
 ## Origin
 
