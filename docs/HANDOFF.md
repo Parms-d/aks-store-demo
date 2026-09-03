@@ -34,7 +34,8 @@ icm-cloud-engineer/
 │
 │   ── entry points (root) ──
 ├── AGENTS.md                 Layer 0 — identity, lane selection, non-negotiables
-├── CLAUDE.md                 mirror of AGENTS.md
+├── CLAUDE.md / GEMINI.md     pointers to AGENTS.md for those agents
+├── .github/copilot-instructions.md   pointer to AGENTS.md
 ├── CONTEXT.md                Layer 1 — lane router + per-step context tables
 │
 │   ── ICM owns ──

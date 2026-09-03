@@ -70,7 +70,22 @@ Then, with your agent in this directory:
 
 ## Handing this to another AI
 
-`docs/HANDOFF.md` is a self-contained prompt describing the whole structure and its rules. Paste it into any agent to have it pick up where this left off.
+**If the agent can see the repository, it bootstraps itself.** Layer 0 is published under every common auto-load convention, and each is a thin pointer to `AGENTS.md` so there is still one canonical source:
+
+| Agent | Auto-loads | File |
+|-------|-----------|------|
+| Cursor | yes | `.cursor/rules/cloud-engineer.mdc` (`alwaysApply: true`) + `AGENTS.md` |
+| Claude Code | yes | `CLAUDE.md` |
+| Codex, Copilot CLI, Zed, others honoring the convention | yes | `AGENTS.md` |
+| GitHub Copilot | yes | `.github/copilot-instructions.md` |
+| Gemini CLI | yes | `GEMINI.md` |
+| Windsurf, Cline, Aider | no | add a pointer file for their convention |
+
+Point any of those at the repo and say what you want done. It reads Layer 0, picks a lane, and pulls only the context that step requires.
+
+**If the agent cannot see the repository** — a web chat, or a tool whose convention is not covered — paste `docs/HANDOFF.md`. It is a self-contained substitute for Layer 0: the structure, both lanes, and the non-negotiable rules, with no prior context assumed.
+
+Note that no entry point loads the whole workspace, and that is the point. The agent gets the map, then fetches what the active step needs. Loading everything would defeat the layering.
 
 ## Giving this its own repository
 
