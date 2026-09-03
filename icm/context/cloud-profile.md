@@ -1,6 +1,6 @@
 # Cloud Profile
 
-> Placeholders are filled by `setup`. See `setup/questionnaire.md`.
+> Placeholders are filled by `setup`. See `icm/setup/questionnaire.md`.
 
 ## Organization
 

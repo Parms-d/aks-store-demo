@@ -13,7 +13,7 @@ Record which Layer 3 files informed this spec. Keeps the token budget auditable.
 
 | File | Section |
 |------|---------|
-| `context/cloud-profile.md` | Environments, workload |
+| `icm/context/cloud-profile.md` | Environments, workload |
 
 ## Operational Scenarios *(mandatory)*
 
@@ -60,9 +60,9 @@ Constraints this feature inherits. Do not restate the rules — link to them.
 
 | Concern | Source |
 |---------|--------|
-| Naming | `context/naming-standards.md` |
-| Principles | `memory/constitution.md` |
-| Tagging | `context/naming-standards.md` — Required Tags |
+| Naming | `icm/context/naming-standards.md` |
+| Principles | `icm/memory/constitution.md` |
+| Tagging | `icm/context/naming-standards.md` — Required Tags |
 
 ## Out of Scope
 

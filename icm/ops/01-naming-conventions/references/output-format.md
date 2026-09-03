@@ -1,6 +1,6 @@
 # Output Format
 
-Required shape for stage 01 artifacts. This file governs **layout only** — naming rules live in `context/naming-standards.md` and are referenced, never copied.
+Required shape for stage 01 artifacts. This file governs **layout only** — naming rules live in `icm/context/naming-standards.md` and are referenced, never copied.
 
 ## Convention Document
 
@@ -29,7 +29,7 @@ One row per resource type in scope:
 
 ### 4. Required Tags
 
-Link to `context/naming-standards.md` — Required Tags. Do not restate the table.
+Link to `icm/context/naming-standards.md` — Required Tags. Do not restate the table.
 
 ### 5. Kubernetes Naming
 

@@ -54,4 +54,4 @@ git push origin icm-standalone
 2. Install the Spec Kit CLI, then run `scripts/bootstrap-speckit.sh <integration>`
 3. Point `{{PROJECT_PATH}}` at your infrastructure repo, now a sibling directory rather than a parent
 
-Nothing references `aks-store-demo` except `examples/`, which is illustrative and safe to delete.
+Nothing references `aks-store-demo` except `docs/examples/`, which is illustrative and safe to delete.

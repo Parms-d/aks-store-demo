@@ -19,9 +19,9 @@ description: "Infrastructure task list template"
 
 **Purpose**: Prepare the working branch and confirm baseline state.
 
-- [ ] T001 Confirm linked project path and IaC tool from `context/cloud-profile.md`
+- [ ] T001 Confirm linked project path and IaC tool from `icm/context/cloud-profile.md`
 - [ ] T002 Capture current deployed state (`az deployment sub what-if` or `terraform plan`) as the baseline
-- [ ] T003 [P] Verify required tags and naming rules in `context/naming-standards.md` are current
+- [ ] T003 [P] Verify required tags and naming rules in `icm/context/naming-standards.md` are current
 
 ---
 
@@ -58,7 +58,7 @@ description: "Infrastructure task list template"
 ## Phase 5: Hardening
 
 - [ ] T010 [P] Confirm every new resource carries required tags
-- [ ] T011 [P] Validate all names against `context/naming-standards.md` constraint table
+- [ ] T011 [P] Validate all names against `icm/context/naming-standards.md` constraint table
 - [ ] T012 Document rollback steps in `quickstart.md`
 - [ ] T013 Promote through {{ENV_STAGING}} to {{ENV_PROD}} per environment parity rule
 

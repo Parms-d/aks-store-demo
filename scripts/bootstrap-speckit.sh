@@ -42,22 +42,22 @@ fi
 
 log "Syncing constitution -> .specify/memory/constitution.md"
 mkdir -p .specify/memory
-cp memory/constitution.md .specify/memory/constitution.md
+cp icm/memory/constitution.md .specify/memory/constitution.md
 
 log "Syncing template overrides -> .specify/templates/overrides/"
 mkdir -p .specify/templates/overrides
-cp speckit/overrides/*.md .specify/templates/overrides/
+cp icm/speckit/overrides/*.md .specify/templates/overrides/
 
 log "Done."
 cat <<EOF
 
 Synced:
-  .specify/memory/constitution.md        <- memory/constitution.md
-  .specify/templates/overrides/          <- speckit/overrides/
+  .specify/memory/constitution.md        <- icm/memory/constitution.md
+  .specify/templates/overrides/          <- icm/speckit/overrides/
 
 Edit the sources, not the copies, then re-run this script.
 
 Next:
   Lane A   /speckit.specify <what to build>
-  Lane B   see ops/CONTEXT.md
+  Lane B   see icm/ops/CONTEXT.md
 EOF

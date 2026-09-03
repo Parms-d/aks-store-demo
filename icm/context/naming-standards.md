@@ -20,7 +20,7 @@ Follow [Azure CAF naming](https://learn.microsoft.com/azure/cloud-adoption-frame
 
 ## Common Prefixes
 
-Authoritative source is `context/abbreviations.json`. This table is a convenience index, not a replacement.
+Authoritative source is `icm/context/abbreviations.json`. This table is a convenience index, not a replacement.
 
 | Resource | Abbreviation key | Prefix |
 |----------|------------------|--------|
