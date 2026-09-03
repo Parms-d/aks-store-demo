@@ -72,6 +72,10 @@ Then, with your agent in this directory:
 
 `docs/HANDOFF.md` is a self-contained prompt describing the whole structure and its rules. Paste it into any agent to have it pick up where this left off.
 
+## Giving this its own repository
+
+This branch is the canonical copy and contains nothing but the workspace. See `docs/PUBLISH.md` for the clone-and-push commands.
+
 ## Origin
 
 Structure follows Jake Van Clief's folder-as-architecture approach ([video](https://youtu.be/MkN-ss2Nl10), [paper](https://arxiv.org/abs/2603.16021)).

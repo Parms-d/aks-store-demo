@@ -53,7 +53,7 @@ icm-cloud-engineer/
 ├── scripts/bootstrap-speckit.sh
 └── docs/                    (human-facing; never loaded by the agent)
     ├── HANDOFF.md
-    ├── EXTRACT.md
+    ├── PUBLISH.md
     └── examples/
 ```
 

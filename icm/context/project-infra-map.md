@@ -18,7 +18,7 @@ Relative to the linked project root.
 | `{{TERRAFORM_PATH}}` | Terraform | Alternative IaC root |
 | `{{HELM_PATH}}` | Helm | Kubernetes chart |
 
-Resolve a file as `{{PROJECT_PATH}}/<relative path>`. Example: `../aks-store-demo/infra/bicep/main.bicep`.
+Resolve a file as `{{PROJECT_PATH}}/<relative path>`. Example: `../platform-infra/infra/bicep/main.bicep`.
 
 If a path is empty or the file is missing, fall back to `icm/context/abbreviations.json` and say so in your output.
 

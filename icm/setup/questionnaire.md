@@ -22,7 +22,7 @@ Remove unused placeholders if fewer than three.
 
 ### Q6: Path to your infrastructure repository?
 `{{PROJECT_PATH}}` → `icm/context/cloud-profile.md`, `icm/context/project-infra-map.md`
-Example: `../aks-store-demo` or `/home/you/projects/platform`
+Example: `../platform-infra` or `/home/you/projects/platform`
 
 ### Q7: IaC tool and deployment tool?
 `{{INFRA_TOOL}}` (`bicep` / `terraform` / `both`), `{{DEPLOY_TOOL}}` (`azd` / `cli` / `pipeline`)
