@@ -48,24 +48,6 @@ log "Syncing template overrides -> .specify/templates/overrides/"
 mkdir -p .specify/templates/overrides
 cp icm/speckit/overrides/*.md .specify/templates/overrides/
 
-# `specify init` writes its own agent context files and may overwrite our
-# pointers. Layer 0 must stay reachable however the agent enters the repo, so
-# re-assert the pointer wherever it is missing. Idempotent by grep.
-ensure_pointer() {
-  local file="$1" rel="$2"
-  mkdir -p "$(dirname "$file")"
-  if [ -f "$file" ] && grep -q 'AGENTS.md' "$file"; then
-    return
-  fi
-  printf '\n## Start here\n\nRead [`AGENTS.md`](%s) first — Layer 0 entry point: the two lanes, the folder map, and the non-negotiable rules.\n' \
-    "$rel" >> "$file"
-  log "Restored AGENTS.md pointer in $file"
-}
-
-ensure_pointer ".github/copilot-instructions.md" "../AGENTS.md"
-ensure_pointer "GEMINI.md" "AGENTS.md"
-ensure_pointer "CLAUDE.md" "AGENTS.md"
-
 log "Done."
 cat <<EOF
 

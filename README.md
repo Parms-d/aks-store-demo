@@ -70,20 +70,18 @@ Then, with your agent in this directory:
 
 ## Handing this to another AI
 
-**If the agent can see the repository, it bootstraps itself.** Layer 0 is published under every common auto-load convention, and each is a thin pointer to `AGENTS.md` so there is still one canonical source:
+**One file does it: `docs/HANDOFF.md`.** It is self-contained — the structure, both lanes, and the non-negotiable rules, assuming no prior context. Copy the whole thing wherever the agent takes instructions.
 
-| Agent | Auto-loads | File |
-|-------|-----------|------|
-| Cursor | yes | `.cursor/rules/cloud-engineer.mdc` (`alwaysApply: true`) + `AGENTS.md` |
-| Claude Code | yes | `CLAUDE.md` |
-| Codex, Copilot CLI, Zed, others honoring the convention | yes | `AGENTS.md` |
-| GitHub Copilot | yes | `.github/copilot-instructions.md` |
-| Gemini CLI | yes | `GEMINI.md` |
-| Windsurf, Cline, Aider | no | add a pointer file for their convention |
+| Agent | What to do |
+|-------|-----------|
+| Cursor | Nothing. `.cursor/rules/cloud-engineer.mdc` applies automatically |
+| Claude Code | Nothing. `CLAUDE.md` loads automatically |
+| Codex, Zed, others honoring the convention | Nothing. `AGENTS.md` loads automatically |
+| GitHub Copilot | Paste `docs/HANDOFF.md` into `.github/copilot-instructions.md`, or into chat |
+| Gemini CLI | Paste `docs/HANDOFF.md` into `GEMINI.md`, or into chat |
+| ChatGPT, Claude web, anything without repo access | Paste `docs/HANDOFF.md` into the conversation |
 
-Point any of those at the repo and say what you want done. It reads Layer 0, picks a lane, and pulls only the context that step requires.
-
-**If the agent cannot see the repository** — a web chat, or a tool whose convention is not covered — paste `docs/HANDOFF.md`. It is a self-contained substitute for Layer 0: the structure, both lanes, and the non-negotiable rules, with no prior context assumed.
+Deliberately no per-agent pointer files here. One canonical brief you copy where you need it beats five stubs that drift.
 
 Note that no entry point loads the whole workspace, and that is the point. The agent gets the map, then fetches what the active step needs. Loading everything would defeat the layering.
 

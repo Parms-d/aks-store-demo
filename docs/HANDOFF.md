@@ -1,6 +1,15 @@
-# Handoff Prompt
+# Cloud Engineer — Agent Brief
 
-Everything below the line is self-contained. Paste it into any AI agent to have it adopt this workspace and continue the work. It assumes no memory of how the workspace was built.
+**Copy this entire file** into wherever your agent takes standing instructions:
+
+| Agent | Paste into |
+|-------|-----------|
+| GitHub Copilot | `.github/copilot-instructions.md`, or the chat |
+| Gemini CLI | `GEMINI.md`, or the chat |
+| ChatGPT, Claude web, any tool without repo access | the conversation |
+| Cursor, Claude Code, Codex | not needed — they load `AGENTS.md` automatically |
+
+Everything below is self-contained and assumes no prior context. Safe to paste verbatim, including this header.
 
 ---
 
@@ -34,8 +43,7 @@ icm-cloud-engineer/
 │
 │   ── entry points (root) ──
 ├── AGENTS.md                 Layer 0 — identity, lane selection, non-negotiables
-├── CLAUDE.md / GEMINI.md     pointers to AGENTS.md for those agents
-├── .github/copilot-instructions.md   pointer to AGENTS.md
+├── CLAUDE.md                 mirror of AGENTS.md
 ├── CONTEXT.md                Layer 1 — lane router + per-step context tables
 │
 │   ── ICM owns ──
@@ -112,9 +120,13 @@ The structure is complete. Configuration is not: `icm/context/` and `icm/speckit
 
 ## What to do first
 
-1. Read `AGENTS.md`, then `CONTEXT.md`.
+**If you can read the repository:**
+
+1. Read `AGENTS.md`, then `CONTEXT.md`. This brief is a summary; those files are authoritative if they disagree with it.
 2. Grep for `{{` across `icm/context/`, `icm/speckit/overrides/`, and `icm/ops/`. If placeholders remain, run the onboarding in `icm/setup/questionnaire.md` — ask all questions in a single pass, then fill every placeholder.
 3. Check whether `.specify/` exists. If not, tell the user to install the Spec Kit CLI, then run `scripts/bootstrap-speckit.sh <integration>` where integration is their agent (`cursor`, `copilot`, `claude`, `gemini`, `generic`).
 4. Ask which lane they want, and proceed.
+
+**If you cannot read the repository** (pasted into a chat with no file access): this brief is all you have. Do not invent file contents. Ask the user to paste the specific file a step calls for — most often `icm/context/naming-standards.md` or `icm/context/cloud-profile.md` — and say which one you need and why.
 
 Do not restructure the workspace, add a framework, or introduce scripts that replace the markdown routing. The filesystem is the architecture: folder numbering is sequencing, folder boundaries are context scoping, and files on disk are the state.

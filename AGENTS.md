@@ -26,11 +26,8 @@ If you are unsure, it is Lane A. Lane B is only for tasks that already have a st
 icm-cloud-engineer/
 │
 │   ── entry points (root, where agents look) ──
-├── AGENTS.md                (you are here — Layer 0, canonical)
-├── CLAUDE.md                (pointer here — Claude Code)
-├── GEMINI.md                (pointer here — Gemini CLI)
-├── .github/copilot-instructions.md   (pointer here — Copilot)
-├── .cursor/rules/           (pointer here — Cursor, alwaysApply)
+├── AGENTS.md                (you are here — Layer 0)
+├── CLAUDE.md                (mirror of this file)
 ├── CONTEXT.md               (Layer 1 — lane router)
 │
 │   ── ICM owns this ──
